@@ -73,9 +73,8 @@ main {
   color: #4c9173; }
 
 .current-temperature-icon {
-  
-  font-size: 40px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
 }
 
 .current-temperature-value {
