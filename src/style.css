@@ -86,9 +86,8 @@ main {
 }
 
 .current-temperature-unit {
+  margin-top: 16px;
   font-size: 28px;
-  position: relative;
-  top: -38px;
 }
 
 footer {
