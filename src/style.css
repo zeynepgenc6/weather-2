@@ -101,3 +101,16 @@ h1{
 }
 
 strong{color: #61b390;}
+
+.weather-forecast-date
+{
+  font-size: 16px;
+  color: #000;
+  opacity: 0.5;
+
+}
+.weather-forecast-tempurates-min{
+  opacity: 0.5; }
+.weather-forecast-tempurates{
+  font-size: 13px;
+}

@@ -54,26 +54,37 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-   searchCity(searchInput.value);
+  searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div> 
+        <div class="weather-forecast-icon">⛅</div>
+        <div class="weather-forecast-tempurates">
+          <div class="weather-forecast-tempurates-max">18&deg;</div> 
+          <div class="weather-forecast-tempurates-min"> 12&deg;</div>
+      </div>
+    </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Houston");
-
-
-
-
-
+displayForecast();
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
-
-
-
-
 
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
