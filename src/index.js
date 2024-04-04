@@ -16,7 +16,9 @@ function refreshWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
   timeElement.innerHTML = formatDate(date);
+  getForecast(response.data.city);
 }
+
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -56,9 +58,15 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   searchCity(searchInput.value);
 }
+function getForecast(city){
+  let apiKey= "tbde3214cf01bode24a7a0423fab97ef";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
 
-function displayForecast() {
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+function displayForecast(response) {
+  console.log(response.data)
+  let days = ['Thu','Fri', 'Sat', 'Sun', 'Mon'];
   let forecastHtml = "";
   days.forEach(function (day) {
     forecastHtml =
@@ -68,8 +76,8 @@ function displayForecast() {
         <div class="weather-forecast-date">${day}</div> 
         <div class="weather-forecast-icon">⛅</div>
         <div class="weather-forecast-tempurates">
-          <div class="weather-forecast-tempurates-max">18&deg;</div> 
-          <div class="weather-forecast-tempurates-min"> 12&deg;</div>
+          <span class="weather-forecast-tempurates-max">18&deg;</span> 
+          <span class="weather-forecast-tempurates-min"> 12&deg;</span>
       </div>
     </div>`;
   });
@@ -81,12 +89,9 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Houston");
-displayForecast();
+getForecast("Houston");
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
 
 let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
-currentDateELement.innerHTML = formatDate(currentDate);

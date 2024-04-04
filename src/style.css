@@ -1,12 +1,11 @@
 body {
-  background-image: url("https://i.pinimg.com/564x/93/32/4f/93324ff1970fbee4e239003901976d78.jpg");;
+  background-image: url("https://i.pinimg.com/564x/93/32/4f/93324ff1970fbee4e239003901976d78.jpg");
   font-family: "Roboto", sans-serif;
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 a {
-  color:#01352c;
+  color: #01352c;
 }
 
 .weather-app {
@@ -70,7 +69,8 @@ main {
 }
 
 .current-details strong {
-  color: #4c9173; }
+  color: #4c9173;
+}
 
 .current-temperature-icon {
   width: 88px;
@@ -80,7 +80,7 @@ main {
 .current-temperature-value {
   font-size: 80px;
   font-weight: bold;
-  color:#01352c ;
+  color: #01352c;
   font-weight: bold;
 }
 
@@ -96,21 +96,37 @@ footer {
 
   color: rgba(39, 33, 66, 0.4);
 }
-h1{
+h1 {
   color: #01352c;
 }
 
-strong{color: #61b390;}
+strong {
+  color: #61b390;
+}
 
-.weather-forecast-date
-{
+.weather-forecast-date {
   font-size: 16px;
   color: #000;
   opacity: 0.5;
+  text-align: center;
+  margin-top: 10px;
 
 }
-.weather-forecast-tempurates-min{
-  opacity: 0.5; }
-.weather-forecast-tempurates{
+.weather-forecast-tempurates-min {
+  opacity: 0.5;
+}
+.weather-forecast-tempurates {
   font-size: 13px;
+  margin: 10px 0 auto;
+  text-align: center;
+  color: #295f4e;
+}
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  font-size: 50px;
+}
+.weather-forecast-icon{
+  margin: 8px 0 auto;
+  text-align: center;
 }
