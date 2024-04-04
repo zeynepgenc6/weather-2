@@ -110,7 +110,6 @@ strong {
   opacity: 0.5;
   text-align: center;
   margin-top: 10px;
-
 }
 .weather-forecast-tempurates-min {
   opacity: 0.5;
@@ -120,13 +119,17 @@ strong {
   margin: 10px 0 auto;
   text-align: center;
   color: #295f4e;
+  display: flex;
+  justify-content: center;
 }
 .weather-forecast {
   display: flex;
   justify-content: space-between;
   font-size: 50px;
 }
-.weather-forecast-icon{
-  margin: 8px 0 auto;
-  text-align: center;
+.weather-forecast-icon {
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto;
 }
